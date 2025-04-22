@@ -1,0 +1,12 @@
+| A   | B   | Resultado |
+| --- | --- | --------- |
+| 8   | 15  | true      |
+| 12  | 18  | false     |
+| 7   | 13  | true      |
+| 25  | 30  | false     |
+| 9   | 28  | true      |
+| 14  | 21  | false     |
+| 17  | 19  | true      |
+| 35  | 64  | true      |
+| 81  | 27  | false     |
+| 101 | 103 | true      |
