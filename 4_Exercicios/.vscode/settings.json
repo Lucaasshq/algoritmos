@@ -1,0 +1,8 @@
+{
+  "files.associations": {
+    "*.py": "python",
+    "type_traits": "cpp",
+    "chrono": "cpp",
+    "iostream": "cpp"
+  }
+}
