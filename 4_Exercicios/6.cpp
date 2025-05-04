@@ -3,18 +3,21 @@
 using namespace std;
 
 bool ehPrimo(long long n) {
-    if (n == 1) return false;
-    if (n == 2) return true;
+  if (n == 1) return false;
+  if (n == 2) return true;
 
-    int divs = 1; // 1 é divisor de todos os naturais
 
-    for (long long i = 3; i <= n / 2; i += 2) {
-        if (n % i == 0) {
-            divs++;
-        }
-    }
+  bool p = true;
+  long long d = 3;
 
-    return divs == 1;
+  while (p && d <= n / 2) {
+      if (n % d == 0) {
+          p = false;
+      }
+      d += 2;
+  }
+
+  return p;
 }
 
 

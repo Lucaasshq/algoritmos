@@ -2,7 +2,7 @@
 #include <chrono>
 using namespace std;
 
-// Função que verifica se um número é primo
+
 bool ehPrimo(long long n)
 {
   int divs = 0;
