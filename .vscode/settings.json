@@ -1,7 +1,9 @@
 {
   "C_Cpp.errorSquiggles": "disabled",
   "files.associations": {
+    "*.py": "python",
     "cstdlib": "cpp",
-    "iostream": "cpp"
+    "iostream": "cpp",
+    "chrono": "cpp"
   }
 }
