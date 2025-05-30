@@ -4,6 +4,8 @@
     "*.py": "python",
     "cstdlib": "cpp",
     "iostream": "cpp",
-    "chrono": "cpp"
+    "chrono": "cpp",
+    "cmath": "cpp",
+    "iomanip": "cpp"
   }
 }
