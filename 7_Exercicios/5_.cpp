@@ -39,4 +39,4 @@ int main(){
     cout << "Pontos mais proximos:  (" << pontos[p1].x << ", " << pontos[p1].y << ") e (" << pontos[p2].x << ", " << pontos[p2].y << ") \n";
     cout << " Distancia: " << sqrt(menorDistancia) << endl;
     return 0;
-}oQq2L6YGQCH!4R2
+}
