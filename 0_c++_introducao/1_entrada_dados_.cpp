@@ -1,12 +1,15 @@
 #include <iostream>
+using namespace std;
+
+void imprimirArray(float* arr, int tamanho){
+		for (int i = 0; i < tamanho; i++){
+				cout << arr[i] << " ";
+		}
+		cout << endl;
+}
 
 int main() {
-  int a,b,c;
-  std::cin >> a;
-  std::cin >> b;
-  c = a + b;
-
-  std::cout << c << std::endl;
-
-  return 0;
+    float notas[] = {7.5, 8.0, 6.5};
+    imprimirArray(notas, 3);  // passa o ponteiro para o primeiro elemento
+    return 0;
 }
