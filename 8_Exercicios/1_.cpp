@@ -1,16 +1,16 @@
 #include <iostream>
 #include <chrono>
-const int INITIAL_CAPACITY = 100, INCREASE_CAPACITY = 100;
+const int INITIAL_CAPACITY = 8;
 // Função para aumentar a capacidade do array
 int* increase_capacity(int* data, int& capacity, int& size) {
-    int* new_array = new int[capacity + INCREASE_CAPACITY];
+    int new_capacity = capacity * 2;
+    int* new_array = new int[new_capacity];
 
     for (int i = 0; i < size; ++i)
         new_array[i] = data[i];
 
-    delete[] data;  // libera a memória antiga
-    
-    capacity = capacity + INCREASE_CAPACITY;
+    delete[] data;
+    capacity = new_capacity;
     return new_array;
 }
 // Função para inserir valor no final (como push_back)
