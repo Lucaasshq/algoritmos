@@ -19,8 +19,6 @@ bool existe_caminho(int labirinto[20][20], int linha, int coluna, int l, int c, 
                    existe_caminho(labirinto, linha, coluna, l-1, c, fimL, fimC); // cima
       labirinto[l][c] = 0;
 
-
-   
     // retorno do backtraking 
     return achou;
 }
