@@ -8,9 +8,21 @@ struct item{
 };
 
 
-double mochila(vector<item> & itens, int q, int peso){
+double mochila(vector<item> itens, int q, int peso){
     int ans = 0;
-    /* TODO */
+    int i = 0;
+    int peso_total = itens[i].peso;
+    
+    if (peso_total >= peso){
+        return 0.0;
+
+    } else {
+    
+    i = i+1;
+    int proximo = mochila(itens.[i], q, peso);
+    }
+        
+    
     return ans;
 }
 
