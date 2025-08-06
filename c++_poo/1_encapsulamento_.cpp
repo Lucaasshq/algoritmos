@@ -1,33 +1,30 @@
 #include <iostream>
-#include <string>
+#include <vector>
 using namespace std;
 
-class Pessoa {
-private:
-    string nome;
-    int idade;
+int contarFormasOrdenadas(int V, const vector<int>& moedas) {
+    vector<int> dp(V + 1, 0);  // dp[i] representa o número de formas de obter o valor i
+    dp[0] = 1; // 1 forma de fazer 0: não usar nenhuma moeda
 
-public:
-    Pessoa(string n, int i){
-        nome = n;
-        idade = i;
+    // Preenche a tabela dp do valor 1 até V
+    for (int v = 1; v <= V; ++v) {
+        for (int moeda : moedas) {
+            if (moeda <= v) {
+                dp[v] += dp[v - moeda]; // soma as formas de chegar até (v - moeda)
+            }
+        }
     }
 
-    string getNome()  {
-        return nome;
-    }
+    return dp[V];
+}
 
-    int getIdade(){
-        return idade;
-    }
+int main() {
+    vector<int> moedas = {2, 3, 5};
+    int V = 9;
 
-    void mostrarInfo(){
-        cout << "Nome: " << nome << ", Idade: " << idade << endl;
-    }
-};
+    int resultado = contarFormasOrdenadas(V, moedas);
 
-int main(){
-    Pessoa p1("Lucas", 21);
+    cout << "Número de formas distintas e ordenadas de obter " << V << ": " << resultado << endl;
 
-    p1.mostrarInfo();
+    return 0;
 }

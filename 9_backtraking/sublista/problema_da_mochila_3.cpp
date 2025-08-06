@@ -2,41 +2,40 @@
 #include <vector>
 using namespace std;
 
-struct item{
+struct item {
     double valor;
     int peso;
 };
 
+double mochila(const vector<item>& itens, int i, int peso_restante) {
+    if (i == itens.size()) return 0.0;
 
-double mochila(vector<item> itens, int q, int peso){
-    int ans = 0;
-    int i = 0;
-    int peso_total = itens[i].peso;
-    
-    if (peso_total >= peso){
-        return 0.0;
+    double sem_item = mochila(itens, i + 1, peso_restante);
 
-    } else {
-    
-    i = i+1;
-    int proximo = mochila(itens.[i], q, peso);
+    double com_item = 0.0;
+    if (itens[i].peso <= peso_restante) {
+        com_item = itens[i].valor + mochila(itens, i + 1, peso_restante - itens[i].peso);
     }
-        
-    
-    return ans;
+
+    return max(sem_item, com_item);
 }
 
-int main(){
-    int tam, peso_maximo;
-    cin >> tam >> peso_maximo;
+int main() {
+    int n, capacidade;
+    cin >> n >> capacidade;
 
-    vector<item> itens(tam);
-    for (Item & i: itens){
+    vector<item> itens(n);
+    for (item& i : itens) {
         cin >> i.peso >> i.valor;
     }
-    double valor = mochila(itens, tam, peso_maximo);
-    
-    
-    
+
+    double resultado = mochila(itens, 0, capacidade);
+
+    long long arredondado = resultado * 100 + 0.5;
+    cout << arredondado / 100 << '.';
+    int centavos = arredondado % 100;
+    if (centavos < 10) cout << '0';
+    cout << centavos << '\n';
+
     return 0;
 }
